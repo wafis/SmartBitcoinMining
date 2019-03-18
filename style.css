@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css?family=Russo+One");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    line-height: 1.4;
+    background: #4000a9;
+    font-family: "Russo One", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+p {
+    /* margin: 1rem 0; */
+}
+
+.container {
+    max-width: 1500px;
+    margin: auto;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+.l-heading {
+    font-size: 6rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+    letter-spacing: 5px;
+}
+
+.lead {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+}
+
+.showcase {
+    grid-area: header;
+    color: #fff;
+}
+
+.testimonial {
+    grid-area: testimonials;
+    text-align: right;
+}
+
+.testimonial .italics {
+    font-style: italic;
+    color: #fff;
+}
+
+.testimonial .light {
+    color: #721cff;
+}
+
+.testimonial .quote {
+    color: #fff;
+}
+
+.contents {
+    grid-area: bookmarks;
+    line-height: 2.5;
+}
+
+.contents ol {
+    list-style: none;
+}
+
+.contents ol li:nth-child(1)::before {
+    color: #721cff;
+    content: "01. ";
+}
+.contents ol li:nth-child(2)::before {
+    color: #721cff;
+    content: "02. ";
+}
+.contents ol li:nth-child(3)::before {
+    color: #721cff;
+    content: "03. ";
+}
+.contents ol li:nth-child(4)::before {
+    color: #721cff;
+    content: "04. ";
+}
+.contents ol li:nth-child(5)::before {
+    color: #721cff;
+    content: "05. ";
+}
+
+.gridcontainer {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "..... bookmarks header header header ..... ....."
+        "..... ..... ..... ..... testimonials testimonials .....";
+}
+
+#navbar {
+    display: flex;
+    top: 0;
+    color: #fff;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 4rem;
+    margin-top: 3rem;
+}
+
+#navbar .logo {
+    letter-spacing: 3px;
+}
+
+#navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+#navbar ul li a {
+    color: #fff;
+    padding: 0.75rem 2rem;
+    margin: 0 1rem;
+    border: 1px solid #7135fd;
+    border-radius: 30px;
+}
+
+#navbar ul li:last-child a {
+    background: #7135fd;
+}
