@@ -1,137 +1,377 @@
 @import url("https://fonts.googleapis.com/css?family=Russo+One");
 
+:root {
+	--color-primary: #2943a4;
+	--color-primary-light: #375ce0;
+	--color-primary-complement: #f7f855;
+	--color-secondary: #f28a24;
+}
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 html,
 body {
-    line-height: 1.4;
-    background: #4000a9;
-    font-family: "Russo One", sans-serif;
+	line-height: 1.4;
+	background: var(--color-primary);
+	font-family: "Russo One", sans-serif;
+	color: #fff;
 }
 
 a {
-    text-decoration: none;
-    color: #fff;
+	text-decoration: none;
+	color: #fff;
 }
 
 p {
-    /* margin: 1rem 0; */
+	/* margin: 1rem 0; */
+}
+
+header {
+	/* background-image: url("./img/blob2.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 0;
+	background-attachment: fixed; */
+	height: 80vh;
 }
 
 .container {
-    max-width: 1500px;
-    margin: auto;
-    padding: 0 2rem;
-    overflow: hidden;
+	max-width: 1500px;
+	margin: auto;
+	padding: 0 2rem;
+	overflow: hidden;
+}
+
+.p-bottom-1 {
+	padding-bottom: 1rem;
+}
+
+.py-2 {
+	padding-bottom: 2rem;
 }
 
 .l-heading {
-    font-size: 6rem;
-    margin-bottom: 0.75rem;
-    line-height: 1.1;
-    letter-spacing: 5px;
+	font-size: 6rem;
+	margin-bottom: 0.75rem;
+	line-height: 1.1;
+	letter-spacing: 5px;
+}
+
+.m-heading {
+	font-size: 3rem;
 }
 
 .lead {
-    font-size: 1.3rem;
-    margin-bottom: 0.7rem;
+	font-size: 1.3rem;
+	margin-bottom: 0.7rem;
 }
 
-.showcase {
-    grid-area: header;
-    color: #fff;
+.color-complement {
+	color: var(--color-primary-complement);
 }
 
-.testimonial {
-    grid-area: testimonials;
-    text-align: right;
+.light {
+	color: var(--color-primary-light);
 }
 
-.testimonial .italics {
-    font-style: italic;
-    color: #fff;
-}
-
-.testimonial .light {
-    color: #721cff;
-}
-
-.testimonial .quote {
-    color: #fff;
-}
-
-.contents {
-    grid-area: bookmarks;
-    line-height: 2.5;
-}
-
-.contents ol {
-    list-style: none;
-}
-
-.contents ol li:nth-child(1)::before {
-    color: #721cff;
-    content: "01. ";
-}
-.contents ol li:nth-child(2)::before {
-    color: #721cff;
-    content: "02. ";
-}
-.contents ol li:nth-child(3)::before {
-    color: #721cff;
-    content: "03. ";
-}
-.contents ol li:nth-child(4)::before {
-    color: #721cff;
-    content: "04. ";
-}
-.contents ol li:nth-child(5)::before {
-    color: #721cff;
-    content: "05. ";
-}
-
-.gridcontainer {
-    margin-top: 5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-        "..... bookmarks header header header ..... ....."
-        "..... ..... ..... ..... testimonials testimonials .....";
+.color-secondary {
+	color: var(--color-secondary);
 }
 
 #navbar {
-    display: flex;
-    top: 0;
-    color: #fff;
-    justify-content: space-between;
-    padding: 1rem;
-    margin-bottom: 4rem;
-    margin-top: 3rem;
+	display: flex;
+	top: 0;
+	color: #fff;
+	justify-content: space-between;
+	padding: 1rem;
+	margin-bottom: 4rem;
+	margin-top: 4rem;
+}
+
+#navbar span {
+	color: var(--color-primary-complement);
 }
 
 #navbar .logo {
-    letter-spacing: 3px;
+	letter-spacing: 3px;
 }
 
 #navbar ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
+	display: flex;
+	align-items: center;
+	list-style: none;
 }
 
 #navbar ul li a {
-    color: #fff;
-    padding: 0.75rem 2rem;
-    margin: 0 1rem;
-    border: 1px solid #7135fd;
-    border-radius: 30px;
+	color: #fff;
+	padding: 0.75rem 2rem;
+	margin: 0 1rem;
+	border: 1px solid #fff;
+	border-radius: 30px;
 }
 
 #navbar ul li:last-child a {
-    background: #7135fd;
+	background: var(--color-primary-light);
+	border: 1px solid var(--color-primary-light);
+	color: var(--color-primary-complement);
+}
+
+.header-grid {
+	margin: 10rem 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+		"bookmarks header header header ....."
+		"..... ..... ..... testimonials testimonials";
+}
+
+.showcase {
+	grid-area: header;
+	color: #fff;
+}
+
+.testimonial {
+	grid-area: testimonials;
+	text-align: right;
+}
+
+.testimonial .italics {
+	font-style: italic;
+	color: #fff;
+}
+
+.testimonial .light {
+	color: var(--color-primary-light);
+}
+
+.testimonial .quote {
+	color: #fff;
+	margin-bottom: 2rem;
+}
+
+.contents {
+	grid-area: bookmarks;
+	line-height: 2.5;
+}
+
+.contents ol {
+	list-style: none;
+	counter-reset: my-counter;
+}
+
+.contents ol li {
+	counter-increment: my-counter;
+}
+
+.contents ol li::before {
+	color: var(--color-primary-light);
+	content: "0" counter(my-counter) ". ";
+}
+
+#products {
+	height: 50vh;
+}
+
+.products-grid {
+	display: grid;
+	grid-template-columns: 1/2fr 1fr 1fr 1fr;
+	grid-template-rows: 300px;
+	grid-template-areas:
+		"products bitcoin ethcoin litecoin"
+		"products bitcoin ethcoin litecoin";
+}
+
+.products {
+	grid-area: products;
+	margin-top: 3.6rem;
+	line-height: 1.8;
+	text-align: right;
+	margin-right: 3rem;
+}
+
+.bitcoin {
+	grid-area: bitcoin;
+}
+
+.title {
+	padding: 2.5rem 2.9rem;
+	/* border: 1px solid red; */
+	/* margin-bottom: 2rem; */
+	margin-left: -2.5rem;
+	margin-top: -1rem;
+	line-height: 1.8;
+	border-left: var(--color-primary-light) 5px solid;
+}
+
+.body1 {
+	padding: 1rem 0.8rem;
+}
+
+.body2 {
+	padding: 2rem 0.8rem;
+}
+
+.ethcoin {
+	grid-area: ethcoin;
+}
+
+.litecoin {
+	grid-area: litecoin;
+}
+
+.card:first-child {
+	border-left: none;
+}
+
+.card {
+	padding: 1rem 2.5rem;
+	border-left: var(--color-primary-light) 1px solid;
+}
+
+.card .footer {
+	padding: 0rem 1rem;
+	margin: 1rem 0;
+	font-size: 60%;
+}
+
+.card .footer a {
+	border: 3px solid var(--color-primary-light);
+	padding: 1.3rem;
+	border-radius: 50%;
+	line-height: 1.3rem;
+}
+
+.active .title {
+	/* mix-blend-mode: screen; */
+	/* background-color: red; */
+	/* background: var(--color-secondary);
+	background-image: radial-gradient(rgb(255, 255, 255) 5%, transparent 0);
+	background-size: 30px 30px; */
+	border-left: #fff 5px solid;
+}
+
+.active .color-secondary {
+	color: #fff;
+}
+
+.active .light {
+	color: #f7f855;
+}
+
+.active .footer a {
+	border: #f7f855 3px solid;
+}
+
+.active {
+	background-color: #f54b31;
+	margin-right: 1rem;
+	border-left: var(--color-primary-light) 5px solid;
+}
+
+#prices {
+	height: 80vh;
+}
+
+.prices-grid {
+	display: grid;
+	grid-template-columns: 0.5fr 1fr 1fr;
+	grid-template-rows: 250px;
+	grid-template-areas:
+		"prices heading heading"
+		"..... form form"
+		"..... output output";
+}
+
+.prices {
+	grid-area: prices;
+	margin-top: 3.6rem;
+	line-height: 1.8;
+	text-align: right;
+	margin-right: 3rem;
+}
+
+.heading {
+	grid-area: heading;
+	text-align: left;
+	padding: 3rem;
+	line-height: 1.8;
+}
+
+.form {
+	grid-area: form;
+	padding: 4rem;
+	background-color: #375ce0;
+	border-left: #f54b31 solid 5px;
+}
+
+.form-grid {
+	display: grid;
+	grid-template-columns: 1fr 0.5fr 0.5fr;
+	grid-template-rows: auto;
+	grid-gap: 2rem;
+}
+
+.form-grid input,
+select {
+	font-size: 2rem;
+	border: none;
+	border-bottom: var(--color-primary-light) 1px solid;
+	color: #fff;
+	background-color: #375ce0;
+	padding: 1rem;
+}
+
+.form-grid select {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background-image: url("./img/play-solid.svg");
+	background-repeat: no-repeat;
+	background-position: right 0.7rem top 50%;
+	background-size: 0.65rem auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.form-grid button {
+	background-color: #f54b31;
+	font-family: "Russo One", sans-serif;
+	color: #fff;
+	font-size: 1rem;
+	padding: 0.75rem 2rem;
+	margin: 0 1rem;
+	border: none;
+	border-radius: 30px;
+	letter-spacing: 1px;
+}
+
+.form-grid button:hover {
+	background-color: #c03f2b;
+}
+
+.form-grid ::placeholder {
+	color: #fff;
+}
+
+.output {
+	grid-area: output;
+	padding: 4rem;
+	background-color: #3150c0;
+	letter-spacing: 1px;
+}
+
+.output p.bright {
+	color: #f7f855;
+	font-size: 0.8rem;
+	letter-spacing: 1px;
+	padding-bottom: 1rem;
+}
+
+.output h1 span {
+	color: #f7f855;
 }
